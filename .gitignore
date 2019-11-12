@@ -3,3 +3,4 @@
 .DS_Store
 # data*
 .ipypnb_checkpoints*
+.vscode*
