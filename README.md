@@ -8,6 +8,18 @@ Harvesting Kentucky's trove of remote sensing data
 
 [Map to Miller Hall](https://maptimelex.github.io/location/) | Thursday, November 14, 6 PM Lexington, KY
 
+<!-- TOC -->
+
+- [Wildcat Eyes](#wildcat-eyes)
+    - [Location and time](#location-and-time)
+    - [TL;DR](#tldr)
+    - [Preamble](#preamble)
+    - [The data source](#the-data-source)
+        - [Selecting your grids](#selecting-your-grids)
+        - [Automate download and extraction](#automate-download-and-extraction)
+
+<!-- /TOC -->
+
 ## TL;DR
 
 Use these [indexes](assets/data) to find desired remote sensing data as tiles and then use a Jupyter Notebook ([Windows](windows-version.ipynb) or [Linux/macOS](macos-version.ipynb) version) to download and extract imagery. The Windows version will use [Potree](http://potree.org/) to render point clouds as an interactive 3D map displayed in your browser.
@@ -23,7 +35,7 @@ Kentucky's [KyFromAbove](http://kyfromabove.ky.gov/) initiative to collect high-
 
 In addition to these assets, the state also host [NAIP imagery](https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/), at various resolutions, from 2006 to 2018. They are available in 10k and 20k grids. You can peruse the FTP site where the data are publicly available: [ftp.kymartian.ky.gov](ftp.kymartian.ky.gov).
 
-### Selecting your grids
+### Select your grids
 
 Let's say you want to download DEMs for an area of interest. Select the appropriate grid layer from our [collection indexes](assets/data) and load it into QGIS.
 
