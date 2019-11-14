@@ -43,7 +43,13 @@
 - QGIS
 @ulend
 
+---
+## Find tiles
+
 ---?image=assets/images/q03.png&size=80%
+
+---
+## Export URLs as CSV
 
 ---?image=assets/images/q04.png&size=80%
 
