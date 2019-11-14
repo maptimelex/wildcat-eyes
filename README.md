@@ -15,7 +15,7 @@ Harvesting Kentucky's trove of remote sensing data
     - [TL;DR](#tldr)
     - [Preamble](#preamble)
     - [The data source](#the-data-source)
-        - [Selecting your grids](#selecting-your-grids)
+        - [Select your grids](#select-your-grids)
         - [Automate download and extraction](#automate-download-and-extraction)
 
 <!-- /TOC -->
@@ -122,8 +122,6 @@ data_names = [
 "ftp://ftp.kymartian.ky.gov/kyaped/DEMs_5FT/N119E323_DEM.zip"
 ]
 
-data_names = ["ftp://ftp.kymartian.ky.gov/kyaped/franklin2012/N073E278.zip"]
-
 if f"{year}" not in data_names[0]:
     print("Check your year and tile names. NAIP years 2018, 2016, and 2018 use a 10k grid. The other years use a 20k grid.")
 
@@ -146,7 +144,7 @@ print(completed.stdout.decode('UTF-8'))
 i = 0
 names= []
 
-# Downlaoad LAZ
+# Download LAZ
 if "laz" in data_names[0][-3:].lower():
     las_names = []
     for url in data_names:
@@ -158,7 +156,7 @@ if "laz" in data_names[0][-3:].lower():
                 data = response.read()
                 outFile.write(data)
         i += 1
-# Downlaoad NAIP
+# Download NAIP
 elif "naip" in data_names[0][-22:-18].lower():
     extension = "jpg"
     if year == "2016":
