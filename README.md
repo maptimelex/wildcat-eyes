@@ -196,6 +196,7 @@ elif "naip" in data_names[0][-22:-18].lower():
         completed = subprocess.run(f'mv {downloads}/{name}/*.* {naip_year}', shell=True, stdout=subprocess.PIPE)
         print(completed.stdout.decode('UTF-8'))
         i += 1
+# Download DEM
 elif "dem" in data_names[0][-7:-4].lower():
     for url in data_names:
         name = url[-16:-4]
@@ -212,6 +213,7 @@ elif "dem" in data_names[0][-7:-4].lower():
         completed = subprocess.run(f'mv {downloads}/{name}/*.* {dem}', shell=True, stdout=subprocess.PIPE)
         print(completed.stdout.decode('UTF-8'))
         i += 1
+# Download HiRes Aerial
 elif "1ft" in data_names[0][-16:-13].lower():
     for url in data_names:
         name = url[-12:-4]
@@ -228,6 +230,7 @@ elif "1ft" in data_names[0][-16:-13].lower():
         completed = subprocess.run(f'mv {downloads}/{name}/*.* {naip_year}', shell=True, stdout=subprocess.PIPE)
         print(completed.stdout.decode('UTF-8'))
         i += 1
+# Assume it is 6in
 else:
     for url in data_names:
         name = url[-12:-4]

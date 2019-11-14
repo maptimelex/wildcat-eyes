@@ -78,4 +78,85 @@ for folder in folders:
     print(f"mkdir {folder}")
 ```
 
+---
+### Maintain asset name
+@ul
+* Layer name based on grid size
+    * 5k (lidar, DEM, <2ft img)
+    * 10k (2 ft NAIP)
+    * 20k (>2ft NAIP)
+* file extensions and year changes
+@ulend
+
+---
+### Why?
+@ul
+* Multiple queries
+    * 7 years of NAIP
+    * Soon 2 years of lidar
+* Download multiple years using same list
+* Must match same resolution
+@ulend
+
+---
+```python
+if "laz" in data_names[0][-3:].lower():
+    name = url[-12:]
+elif "naip" in data_names[0][-22:-18].lower():
+    extension = "jpg"
+    name = url[-12:-4]
+    if year == "2016":
+        naip_prefix = "ky_2ft_naip_2016_"
+elif "dem" in data_names[0][-7:-4].lower():
+    name = url[-16:-4]
+elif "1ft" in data_names[0][-16:-13].lower():
+    name = url[-12:-4]
+```
+
+---
+```python
+# Download, extract, and move
+with urllib.request.urlopen(url) as response: 
+    with open(f'{downloads}/{name}.zip', 'wb') as outFile:
+        data = response.read()
+        outFile.write(data) 
+with ZipFile(f'{downloads}/{name}.zip', 'r') as zip: 
+    zip.extractall(f'{downloads}/{name}')
+subprocess.run(f'mv {downloads}/{name}/*.* {naip_year}')
+```
+
+---
+### Merge tiles
+```bash
+ls -n1 dem/*.img > list.txt
+gdal_merge.py -ot Float32 -of GTiff -o dem.tif --optfile list.txt
+```
+
+
+---?image=assets/images/q07.png&size=80%
+### QGIS menu > Raster > Miscellaneous > Merge
+
+
+---
+## Potree Conversion
+
+---
+```python
+# Create interactive point cloudmap with PotreeConverter.exe
+for i in names:
+    if ".las" in i:
+        with open(f'{root}\\{project}\\potree_las_list.txt', 'a+') as outFile:
+            outFile.write(f"{root}\\{project}\\lidar\\{i}\n")
+potreeOut = f"""{potree_tools} --list-of-files 
+               {root}\\{project}\\potree_las_list.txt
+               -o {root}\\{project}\\potree -p index"""
+subprocess.run(potreeOut)
+```
+
+---
+# Thank you!
+
+---?image=assets/images/geo_depart.png&size=50%
+
+
 
