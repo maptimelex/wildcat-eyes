@@ -6,7 +6,7 @@ Harvesting Kentucky's trove of remote sensing data
 
 ## Location and time
 
-[Map to Miller Hall](https://maptimelex.github.io/location/) | Thursday, November 14, 6 PM Lexington, KY
+[Map to Miller Hall](https://maptimelex.github.io/location/) | [Presentation](https://gitpitch.com/maptimelex/wildcat-eyes) | Thursday, November 14, 6 PM Lexington, KY
 
 <!-- TOC -->
 
