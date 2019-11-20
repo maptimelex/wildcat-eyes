@@ -33,7 +33,7 @@ Remote sensing data can be difficult to handle, especially over a large area. Wh
 
 Kentucky's [KyFromAbove](http://kyfromabove.ky.gov/) initiative to collect high-resolution aerial imagery and elevation data began in 2010 and continues today. Lidar point cloud and 5-ft DEM layers are available for the entire state, though in 5,000 ft x 5,000 ft tiles. KyFromAbove is actively collecting 6-in resolution leaf-off aerial photography and lidar for 2019/2020. 
 
-In addition to these assets, the state also host [NAIP imagery](https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/), at various resolutions, from 2006 to 2018. They are available in 10k and 20k grids. You can peruse the FTP site where the data are publicly available: [ftp.kymartian.ky.gov](https://ftp.kymartian.ky.gov).
+In addition to these assets, the state also host [NAIP imagery](https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/), at various resolutions, from 2006 to 2018. They are available in 10k and 20k grids. You can peruse the FTP site where the data are publicly available: [ftp.kymartian.ky.gov](hftp://ftp.kymartian.ky.gov).
 
 ### Select your grids
 
